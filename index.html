@@ -1,4 +1,4 @@
-i<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -11,7 +11,7 @@ i<!DOCTYPE html>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
@@ -61,10 +61,10 @@ i<!DOCTYPE html>
         let outputElement = document.getElementById('output');
 
         const tinyLlamaModel = {
-            "name": "TinyLLama 1.5T (482 MB)",
+            "name": "TinyLLama",
             "link": "https://huggingface.co/Corianas/tiny-llama-miniguanaco-1.5T",
-            "model": "https://huggingface.co/rahuldshetty/llm.js/resolve/main/tiny-llama-miniguanaco-1.5t.q2_k.gguf",
-            "prompt": "{prompt}\n",
+            "model": "https://huggingface.co/DevsDoCode/LLama-3-8b-Uncensored-Q2_K-GGUF/blob/main/llama-3-8b-uncensored.Q2_K.gguf",
+            "prompt": "{prompt}\nwhat is 1 + 2",
             "type": "LLAMA"
         };
 
@@ -75,11 +75,7 @@ i<!DOCTYPE html>
         }
 
         const write_result = (line) => {
-            outputElement.textContent += line + "\n";
-            if (line.includes("<END>")) {
-                LLMEngine.stop();
-                submitButton.disabled = false;
-            }
+            outputElement.textContent  += line + "\n";
         }
 
         const run_complete = () => {
